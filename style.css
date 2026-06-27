@@ -218,6 +218,76 @@ body {
 
 .hero-text p { color: var(--text-secondary); font-size: 14px; max-width: 680px; }
 
+/* ===== HERO DOWNLOAD BUTTONS ===== */
+.hero-downloads {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+  flex-wrap: wrap;
+}
+
+.dl-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 20px;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: all 0.22s cubic-bezier(0.4,0,0.2,1);
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.dl-btn-primary {
+  background: linear-gradient(135deg, var(--orange), #e8540f);
+  color: #fff;
+  box-shadow: 0 4px 18px rgba(252,96,17,0.35);
+}
+
+.dl-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(252,96,17,0.5);
+  filter: brightness(1.08);
+}
+
+.dl-btn-secondary {
+  background: var(--surface2);
+  color: var(--text-primary);
+  border-color: var(--border2);
+}
+
+.dl-btn-secondary:hover {
+  border-color: var(--orange-glow);
+  background: var(--surface3);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(252,96,17,0.15);
+}
+
+.dl-icon {
+  font-size: 20px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.dl-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.dl-label {
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.dl-sub {
+  font-size: 10px;
+  opacity: 0.75;
+  font-weight: 400;
+  letter-spacing: 0.2px;
+}
+
 .hero-stats {
   display: flex;
   flex-direction: column;
