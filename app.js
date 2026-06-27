@@ -69,7 +69,6 @@ document.querySelectorAll('.seg-btn').forEach(btn => {
 
 // ===== CHART REGISTRY =====
 const charts = {};
-const initialised = new Set();
 
 function safeChart(id, config) {
   const el = getCanvas(id);
@@ -79,9 +78,7 @@ function safeChart(id, config) {
 }
 
 function initChartsForTab(tab) {
-  if (initialised.has(tab)) return;
-  initialised.add(tab);
-
+  // No guard — always re-render so charts animate fresh on every tab visit
   if (tab === 'overview') initOverviewCharts();
   if (tab === 'segments') initSegmentCharts();
   if (tab === 'kpis') initKPICharts();
