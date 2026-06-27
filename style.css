@@ -70,9 +70,12 @@ body {
   gap: 14px;
 }
 
-.brand-logo {
-  font-size: 32px;
-  filter: drop-shadow(0 0 12px rgba(252,96,17,0.6));
+.brand-logo-img {
+  width: 36px;
+  height: 36px;
+  filter: invert(45%) sepia(90%) saturate(800%) hue-rotate(1deg) brightness(105%)
+          drop-shadow(0 0 10px rgba(252,96,17,0.55));
+  flex-shrink: 0;
 }
 
 .brand-name {
