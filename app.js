@@ -58,12 +58,16 @@ document.querySelectorAll('.tab-btn').forEach(btn => {
 });
 
 // ===== SEGMENT TABS =====
+let activeSegment = 'food';
+
 document.querySelectorAll('.seg-btn').forEach(btn => {
   btn.addEventListener('click', () => {
     document.querySelectorAll('.seg-btn').forEach(b => b.classList.remove('active'));
     document.querySelectorAll('.seg-panel').forEach(p => p.classList.remove('active'));
     btn.classList.add('active');
     document.getElementById('seg-' + btn.dataset.seg).classList.add('active');
+    activeSegment = btn.dataset.seg;
+    initSegmentCharts(activeSegment);
   });
 });
 
@@ -80,7 +84,7 @@ function safeChart(id, config) {
 function initChartsForTab(tab) {
   // No guard — always re-render so charts animate fresh on every tab visit
   if (tab === 'overview') initOverviewCharts();
-  if (tab === 'segments') initSegmentCharts();
+  if (tab === 'segments') initSegmentCharts(activeSegment);
   if (tab === 'kpis') initKPICharts();
   if (tab === 'competitive') initCompetitiveCharts();
   if (tab === 'risks') initRisksCharts();
@@ -124,8 +128,15 @@ function initOverviewCharts() {
 }
 
 // ===== SEGMENT CHARTS =====
-function initSegmentCharts() {
+function initSegmentCharts(seg) {
   const fyLabels = ['FY22', 'FY23', 'FY24', 'FY25'];
+  if (seg === 'food') { initFoodCharts(fyLabels); return; }
+  if (seg === 'instamart') { initInstamartCharts(fyLabels); return; }
+  if (seg === 'dineout') { initDineoutCharts(); return; }
+  if (seg === 'bolt') { initBoltCharts(); return; }
+}
+
+function initFoodCharts(fyLabels) {
 
   // Food: Orders
   safeChart('foodOrders', {
@@ -259,6 +270,9 @@ function initSegmentCharts() {
       }
     }
   });
+}
+
+function initInstamartCharts(fyLabels) {
 
   // Instamart: Orders
   safeChart('instaOrders', {
@@ -397,6 +411,9 @@ function initSegmentCharts() {
       }
     }
   });
+}
+
+function initDineoutCharts() {
 
   // Dineout Revenue Sources (donut)
   safeChart('dineoutRevenue', {
@@ -420,6 +437,9 @@ function initSegmentCharts() {
       }
     }
   });
+}
+
+function initBoltCharts() {
 
   // Bolt strategic role
   safeChart('boltRole', {
