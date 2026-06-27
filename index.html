@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Swiggy – Analyst Dashboard | MMS Finance 2026</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-inner">
+    <div class="brand">
+      <span class="brand-logo">🍊</span>
+      <div>
+        <div class="brand-name">SWIGGY</div>
+        <div class="brand-sub">Analyst Intelligence Dashboard</div>
+      </div>
+    </div>
+    <div class="header-meta">
+      <span class="badge badge-listed">NSE / BSE Listed 2024</span>
+      <span class="badge badge-sector">Consumer Internet</span>
+      <div class="meta-date">Report Date: June 6, 2026 &nbsp;|&nbsp; Prepared by <strong>Avishkar Patil</strong>, MMS Finance</div>
+    </div>
+  </div>
+</header>
+
+<!-- NAV TABS -->
+<nav class="tab-nav">
+  <button class="tab-btn active" data-tab="overview">Overview</button>
+  <button class="tab-btn" data-tab="segments">Business Segments</button>
+  <button class="tab-btn" data-tab="kpis">KPI Tracker</button>
+  <button class="tab-btn" data-tab="competitive">Competitive Landscape</button>
+  <button class="tab-btn" data-tab="risks">Risks & Opportunities</button>
+  <button class="tab-btn" data-tab="verdict">Analyst Verdict</button>
+</nav>
+
+<!-- CONTENT PANELS -->
+<main class="main-content">
+
+  <!-- ===== OVERVIEW ===== -->
+  <section class="tab-panel active" id="tab-overview">
+
+    <div class="section-hero">
+      <div class="hero-text">
+        <h1>India's Leading On-Demand Convenience Platform</h1>
+        <p>Founded 2014 by Sriharsha Majety, Nandan Reddy & Rahul Jaimini — Swiggy pioneered online food delivery in India and has since evolved into a <strong>multi-service urban convenience ecosystem</strong> spanning Food Delivery, Quick Commerce, Dining-Out, and Membership Programs.</p>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-pill">
+          <div class="stat-num">500K+</div>
+          <div class="stat-lbl">Delivery Partners (FY25, +31% YoY)</div>
+        </div>
+        <div class="stat-pill">
+          <div class="stat-num">240K+</div>
+          <div class="stat-lbl">Restaurant & Brand Partners</div>
+        </div>
+        <div class="stat-pill">
+          <div class="stat-num">1,102</div>
+          <div class="stat-lbl">Active Dark Stores (Q2FY26)</div>
+        </div>
+        <div class="stat-pill">
+          <div class="stat-num">128</div>
+          <div class="stat-lbl">Cities Covered (Instamart)</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid-3">
+      <div class="card">
+        <div class="card-icon">🚀</div>
+        <h3>What They Do</h3>
+        <p>Single app connecting consumers to food, groceries, dining experiences & daily essentials via technology-driven hyper-local fulfilment. Four major verticals: <strong>Food Delivery, Instamart (Q-Comm), Dineout, and Bolt (10-min food)</strong>.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">👥</div>
+        <h3>Who They Serve</h3>
+        <p>Urban working professionals, families & young digital consumers in metros — plus rapidly growing <strong>Tier-2 & Tier-3 city users</strong> where internet penetration is accelerating. 1 in 4 new Instamart users in FY25 came from non-metro cities.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">⚡</div>
+        <h3>Key Differentiator</h3>
+        <p><strong>Integrated multi-service ecosystem</strong>: 30%+ of users engage with multiple Swiggy services. Bolt (10-min delivery) rolled out to 500+ cities, driving 4–6% higher monthly retention vs. platform average.</p>
+      </div>
+    </div>
+
+    <div class="grid-2 mt-24">
+      <div class="card">
+        <h3 class="chart-title">Revenue Stream Breakdown</h3>
+        <p class="chart-sub">Approximate revenue contribution mix across Swiggy's major verticals</p>
+        <div class="chart-wrap"><canvas id="revenuePie"></canvas></div>
+      </div>
+      <div class="card">
+        <h3 class="chart-title">Business Timeline</h3>
+        <p class="chart-sub">Key milestones in Swiggy's evolution</p>
+        <div class="timeline">
+          <div class="tl-item"><span class="tl-year">2014</span><span class="tl-event">Founded – Food Delivery launch in Bangalore</span></div>
+          <div class="tl-item"><span class="tl-year">2020</span><span class="tl-event">Instamart launched — entry into Quick Commerce</span></div>
+          <div class="tl-item"><span class="tl-year">2022</span><span class="tl-event">Acquisition of Dineout — dining-out ecosystem</span></div>
+          <div class="tl-item"><span class="tl-year">2023</span><span class="tl-event">Bolt (10-min food delivery) scaled to 500+ cities</span></div>
+          <div class="tl-item"><span class="tl-year">2024</span><span class="tl-event">IPO on NSE/BSE — prominent publicly listed internet co.</span></div>
+          <div class="tl-item"><span class="tl-year">FY25</span><span class="tl-event">Food Delivery turns Adj. EBITDA positive (+2.0%)</span></div>
+          <div class="tl-item"><span class="tl-year">2025</span><span class="tl-event">1,021 dark stores, Megapods launched (10K–12K sqft)</span></div>
+          <div class="tl-item"><span class="tl-year">Q2FY26</span><span class="tl-event">1,102 dark stores | 128 cities | MTU 17.2M (+17.2% YoY)</span></div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ===== SEGMENTS ===== -->
+  <section class="tab-panel" id="tab-segments">
+
+    <div class="segment-tabs">
+      <button class="seg-btn active" data-seg="food">🍕 Food Delivery</button>
+      <button class="seg-btn" data-seg="instamart">🛒 Instamart</button>
+      <button class="seg-btn" data-seg="dineout">🍽️ Dineout</button>
+      <button class="seg-btn" data-seg="bolt">⚡ Bolt</button>
+    </div>
+
+    <!-- Food Delivery -->
+    <div class="seg-panel active" id="seg-food">
+      <div class="seg-header">
+        <div>
+          <h2>Food Delivery</h2>
+          <p class="seg-desc">Swiggy's original and most established segment — connecting customers to a vast restaurant network via its hyperlocal delivery fleet. The segment has transitioned from growth-at-all-costs to <strong>profitable growth</strong>.</p>
+        </div>
+        <div class="seg-badges">
+          <span class="sbadge green">✅ Adj. EBITDA Positive (FY25)</span>
+          <span class="sbadge blue">629M Orders FY25</span>
+        </div>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <h3 class="chart-title">Total Orders (FY22–FY25, million)</h3>
+          <div class="chart-wrap"><canvas id="foodOrders"></canvas></div>
+        </div>
+        <div class="card">
+          <h3 class="chart-title">GOV Growth (₹ Crore)</h3>
+          <div class="chart-wrap"><canvas id="foodGOV"></canvas></div>
+        </div>
+      </div>
+      <div class="grid-3 mt-24">
+        <div class="card">
+          <h3 class="chart-title">Avg Order Value (₹)</h3>
+          <div class="chart-wrap-sm"><canvas id="foodAOV"></canvas></div>
+        </div>
+        <div class="card">
+          <h3 class="chart-title">Contribution Margin (% of GOV)</h3>
+          <div class="chart-wrap-sm"><canvas id="foodContrib"></canvas></div>
+        </div>
+        <div class="card">
+          <h3 class="chart-title">Adj. EBITDA Margin (% of GOV)</h3>
+          <div class="chart-wrap-sm"><canvas id="foodEBITDA"></canvas></div>
+        </div>
+      </div>
+      <div class="insight-box mt-24">
+        <div class="insight-icon">💡</div>
+        <div>
+          <strong>Analyst Insight:</strong> Food Delivery is now Swiggy's <em>profitability engine</em>. With Adj. EBITDA turning positive at +2.0% in FY25 (vs –0.2% in FY24), and Contribution Margin improving from 1.6% (FY22) to 7.1% (FY25), this segment generates cash to fund Instamart's expansion. Bolt's 10-min delivery innovation drives 4–6% higher user retention and is a meaningful market-share driver.
+        </div>
+      </div>
+    </div>
+
+    <!-- Instamart -->
+    <div class="seg-panel" id="seg-instamart">
+      <div class="seg-header">
+        <div>
+          <h2>Instamart (Quick Commerce)</h2>
+          <p class="seg-desc">Swiggy's fastest-growing segment — delivering groceries, household essentials, personal care & non-grocery items within 10–15 minutes via a network of strategically located <strong>dark stores</strong>.</p>
+        </div>
+        <div class="seg-badges">
+          <span class="sbadge amber">⚠️ Still Loss-Making (improving)</span>
+          <span class="sbadge blue">124 Cities | 1,021 Dark Stores (FY25)</span>
+        </div>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <h3 class="chart-title">Total Orders (million)</h3>
+          <div class="chart-wrap"><canvas id="instaOrders"></canvas></div>
+        </div>
+        <div class="card">
+          <h3 class="chart-title">GOV (₹ Crore) & Gross Revenue</h3>
+          <div class="chart-wrap"><canvas id="instaGOV"></canvas></div>
+        </div>
+      </div>
+      <div class="grid-3 mt-24">
+        <div class="card">
+          <h3 class="chart-title">Avg Order Value (₹)</h3>
+          <div class="chart-wrap-sm"><canvas id="instaAOV"></canvas></div>
+        </div>
+        <div class="card">
+          <h3 class="chart-title">Active Dark Stores</h3>
+          <div class="chart-wrap-sm"><canvas id="instaDarkStores"></canvas></div>
+        </div>
+        <div class="card">
+          <h3 class="chart-title">Adj. EBITDA Margin (% of GOV)</h3>
+          <div class="chart-wrap-sm"><canvas id="instaEBITDA"></canvas></div>
+        </div>
+      </div>
+      <div class="grid-2 mt-24">
+        <div class="card">
+          <h3 class="chart-title">Dark Store Format Evolution</h3>
+          <p class="chart-sub">Swiggy is upgrading store sizes for higher SKU capacity and efficiency</p>
+          <div class="infra-table">
+            <div class="infra-row header-row"><span>Format</span><span>Size (sqft)</span><span>SKU Capacity</span><span>Status</span></div>
+            <div class="infra-row"><span>Standard Dark Store</span><span>3,500–4,500</span><span>~20,000</span><span class="badge-sm green">Scaling</span></div>
+            <div class="infra-row"><span>Megapod</span><span>10,000–12,000</span><span>50,000+</span><span class="badge-sm blue">44 Live (FY25)</span></div>
+            <div class="infra-row note"><span colspan="4">Megapods: ~10% of dark store area → serve ~20% of customer base</span></div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="insight-box" style="margin:0">
+            <div class="insight-icon">💡</div>
+            <div>
+              <strong>Analyst Insight:</strong> Instamart is Swiggy's <em>largest growth opportunity</em> but also its biggest capital consumer. Nearly half of dark stores are under 1 year old — maturation will drive significant profitability improvement. 1 in 4 new FY25 users came from Tier-2/3 cities. 15–20% of orders are now non-grocery (electronics, fashion, medicines) — expanding TAM. Early profitability signals visible in key markets.
+            </div>
+          </div>
+          <div class="kpi-mini-grid mt-16">
+            <div class="kpi-mini"><div class="kpi-mini-val">7x</div><div class="kpi-mini-lbl">Order Growth FY22→FY25</div></div>
+            <div class="kpi-mini"><div class="kpi-mini-val">₹514</div><div class="kpi-mini-lbl">AOV FY25 (vs ₹394 FY22)</div></div>
+            <div class="kpi-mini"><div class="kpi-mini-val">21M</div><div class="kpi-mini-lbl">Monthly Transacting Users FY25</div></div>
+            <div class="kpi-mini"><div class="kpi-mini-val">29%</div><div class="kpi-mini-lbl">New Instamart users new to Swiggy</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dineout -->
+    <div class="seg-panel" id="seg-dineout">
+      <div class="seg-header">
+        <div>
+          <h2>Dineout & Out-of-Home Consumption</h2>
+          <p class="seg-desc">Restaurant discovery, table reservations, exclusive dining offers, digital payments, and live experience curation (Scenes) — Swiggy's play to own the <strong>entire food consumption journey</strong>.</p>
+        </div>
+        <div class="seg-badges">
+          <span class="sbadge green">✅ Profitable in Q4 FY25</span>
+          <span class="sbadge blue">₹3,084 Cr GOV | +41% YoY</span>
+        </div>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <h3 class="chart-title">Dineout Revenue Model</h3>
+          <div class="chart-wrap"><canvas id="dineoutRevenue"></canvas></div>
+        </div>
+        <div class="card">
+          <h3 class="chart-title">Dineout Performance Milestones</h3>
+          <div class="milestone-list">
+            <div class="ms-item"><div class="ms-dot green"></div><div><strong>FY25 GOV:</strong> ₹3,084 Crore (+41% YoY)</div></div>
+            <div class="ms-item"><div class="ms-dot green"></div><div><strong>Adj. EBITDA:</strong> +0.3% in Q4 FY25 (breakeven achieved)</div></div>
+            <div class="ms-item"><div class="ms-dot blue"></div><div><strong>Scenes:</strong> Live event curation (cricket, football screenings, community events)</div></div>
+            <div class="ms-item"><div class="ms-dot blue"></div><div><strong>One BLCK:</strong> Premium membership bridging food delivery + dining out</div></div>
+            <div class="ms-item"><div class="ms-dot amber"></div><div><strong>Opportunity:</strong> Dining out remains underpenetrated even in metro India</div></div>
+            <div class="ms-item"><div class="ms-dot amber"></div><div><strong>Strategy:</strong> Own the consumer from home delivery → restaurant visit → events</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bolt -->
+    <div class="seg-panel" id="seg-bolt">
+      <div class="seg-header">
+        <div>
+          <h2>Bolt — 10-Minute Food Delivery</h2>
+          <p class="seg-desc">Swiggy's innovation within the mature food delivery category — delivering restaurant meals in <strong>10 minutes</strong>, rolled out to 500+ cities. No speed-based driver incentives are used; safety is maintained.</p>
+        </div>
+        <div class="seg-badges">
+          <span class="sbadge green">✅ 500+ Cities</span>
+          <span class="sbadge blue">4–6% Higher Monthly Retention</span>
+        </div>
+      </div>
+      <div class="grid-3">
+        <div class="card">
+          <div class="bolt-stat">
+            <div class="bolt-num">500+</div>
+            <div class="bolt-lbl">Cities with Bolt</div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="bolt-stat">
+            <div class="bolt-num">4–6%</div>
+            <div class="bolt-lbl">Higher monthly retention vs platform average</div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="bolt-stat">
+            <div class="bolt-num">🔒</div>
+            <div class="bolt-lbl">No speed-based driver incentives — safety maintained</div>
+          </div>
+        </div>
+      </div>
+      <div class="grid-2 mt-24">
+        <div class="card">
+          <h3 class="chart-title">Bolt's Strategic Role</h3>
+          <div class="chart-wrap"><canvas id="boltRole"></canvas></div>
+        </div>
+        <div class="card">
+          <div class="insight-box" style="margin:0">
+            <div class="insight-icon">⚡</div>
+            <div>
+              <strong>Analyst Insight — Bolt as a Moat:</strong><br/><br/>
+              Bolt demonstrates non-linear innovation in a mature category. By creating a new use case (immediate food cravings, impulse orders), Bolt is both a <em>market growth driver</em> (bringing new consumers) and a <em>market share driver</em> (retaining existing ones). The key advantage: delivery partners are not told an order is a Bolt order — no operational disruption, no safety compromise. This is operationally elegant and scalable.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ===== KPI TRACKER ===== -->
+  <section class="tab-panel" id="tab-kpis">
+
+    <div class="kpi-header">
+      <h2>Key Performance Metrics</h2>
+      <p>Critical metrics for tracking Swiggy's operating performance across segments — as presented in the FY25 Annual Report and Q2FY26 results</p>
+    </div>
+
+    <div class="kpi-cards-row">
+      <div class="kpi-card">
+        <div class="kpi-label">MTU (Q2FY26)</div>
+        <div class="kpi-value">17.2M</div>
+        <div class="kpi-change positive">+17.2% YoY — Highest in 2 yrs</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Food GOV (Q2FY26)</div>
+        <div class="kpi-value">₹8,542 Cr</div>
+        <div class="kpi-change positive">+18.8% YoY</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Instamart AOV (Q2FY26)</div>
+        <div class="kpi-value">₹697</div>
+        <div class="kpi-change positive">+39.7% YoY</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Dark Stores (Q2FY26)</div>
+        <div class="kpi-value">1,102</div>
+        <div class="kpi-change positive">128 cities covered</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Contrib. Margin (Q2FY26)</div>
+        <div class="kpi-value">–2.6%</div>
+        <div class="kpi-change positive">Improving trend</div>
+      </div>
+    </div>
+
+    <div class="grid-2 mt-24">
+      <div class="card">
+        <h3 class="chart-title">Monthly Transacting Users (MTU, millions)</h3>
+        <p class="chart-sub">Unique users placing at least one order per month across all segments</p>
+        <div class="chart-wrap"><canvas id="mtuChart"></canvas></div>
+      </div>
+      <div class="card">
+        <h3 class="chart-title">Gross Order Value – Combined (₹ Crore)</h3>
+        <p class="chart-sub">Total order value across Food + Instamart quarterly</p>
+        <div class="chart-wrap"><canvas id="govCombined"></canvas></div>
+      </div>
+    </div>
+
+    <div class="grid-3 mt-24">
+      <div class="card">
+        <h3 class="chart-title">Instamart AOV Trend (₹)</h3>
+        <p class="chart-sub">Avg spend per Instamart order — drives unit economics</p>
+        <div class="chart-wrap-sm"><canvas id="instaAOVTrend"></canvas></div>
+      </div>
+      <div class="card">
+        <h3 class="chart-title">Dark Store Network (count)</h3>
+        <p class="chart-sub">Total active dark stores — proxy for Instamart capacity</p>
+        <div class="chart-wrap-sm"><canvas id="darkStoresTrend"></canvas></div>
+      </div>
+      <div class="card">
+        <h3 class="chart-title">Instamart Contribution Margin (% GOV)</h3>
+        <p class="chart-sub">Profitability after direct operational costs</p>
+        <div class="chart-wrap-sm"><canvas id="instaContribTrend"></canvas></div>
+      </div>
+    </div>
+
+    <div class="card mt-24">
+      <h3 class="chart-title">Swiggy One Membership — Platform Ecosystem KPIs</h3>
+      <div class="ecosystem-grid">
+        <div class="eco-item">
+          <div class="eco-num">30%+</div>
+          <div class="eco-lbl">Users engaged with multiple Swiggy services</div>
+        </div>
+        <div class="eco-item">
+          <div class="eco-num">29%</div>
+          <div class="eco-lbl">New Instamart users who are entirely new to Swiggy</div>
+        </div>
+        <div class="eco-item">
+          <div class="eco-num">~240K</div>
+          <div class="eco-lbl">Restaurant & brand partners</div>
+        </div>
+        <div class="eco-item">
+          <div class="eco-num">500K+</div>
+          <div class="eco-lbl">Delivery partners (+31% YoY in FY25)</div>
+        </div>
+        <div class="eco-item">
+          <div class="eco-num">44</div>
+          <div class="eco-lbl">Megapods operational by FY25 end</div>
+        </div>
+        <div class="eco-item">
+          <div class="eco-num">718</div>
+          <div class="eco-lbl">Cities covered by Food Delivery (vs 124 Instamart)</div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ===== COMPETITIVE ===== -->
+  <section class="tab-panel" id="tab-competitive">
+
+    <div class="kpi-header">
+      <h2>Competitive Landscape</h2>
+      <p>Swiggy operates in two key competitive battlegrounds — Food Delivery (duopoly) and Quick Commerce (triopoly)</p>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <h3 class="chart-title">Food Delivery: Market Structure</h3>
+        <p class="chart-sub">India's food delivery is a duopoly — Swiggy vs. Zomato</p>
+        <div class="chart-wrap"><canvas id="foodMarket"></canvas></div>
+      </div>
+      <div class="card">
+        <h3 class="chart-title">Quick Commerce: Market Share</h3>
+        <p class="chart-sub">Blinkit leads; Instamart 2nd; Zepto 3rd (Source: AllianceBernstein / Economic Times)</p>
+        <div class="chart-wrap"><canvas id="qcommMarket"></canvas></div>
+      </div>
+    </div>
+
+    <div class="card mt-24">
+      <h3 class="chart-title">Competitive Comparison Matrix</h3>
+      <div class="comp-table">
+        <div class="comp-row comp-header">
+          <span>Parameter</span>
+          <span>🟠 Swiggy</span>
+          <span>🟢 Zomato / Blinkit</span>
+          <span>🔵 Zepto</span>
+        </div>
+        <div class="comp-row">
+          <span>Food Delivery Position</span>
+          <span class="comp-val amber">#2 (strong)</span>
+          <span class="comp-val green">#1 Market Leader</span>
+          <span class="comp-val neutral">Not in food delivery</span>
+        </div>
+        <div class="comp-row">
+          <span>Quick Commerce Position</span>
+          <span class="comp-val amber">#2 / #3</span>
+          <span class="comp-val green">#1 (Blinkit)</span>
+          <span class="comp-val amber">#2–3 (fast growing)</span>
+        </div>
+        <div class="comp-row">
+          <span>Platform Integration</span>
+          <span class="comp-val green">Single super app</span>
+          <span class="comp-val amber">Separate apps (Zomato + Blinkit)</span>
+          <span class="comp-val neutral">Single-focus</span>
+        </div>
+        <div class="comp-row">
+          <span>Dark Store Expansion</span>
+          <span class="comp-val amber">Stable (focusing efficiency)</span>
+          <span class="comp-val green">Aggressive expansion</span>
+          <span class="comp-val green">Aggressive expansion</span>
+        </div>
+        <div class="comp-row">
+          <span>10-min Food Delivery</span>
+          <span class="comp-val green">✅ Bolt (500+ cities)</span>
+          <span class="comp-val amber">Limited</span>
+          <span class="comp-val neutral">N/A (grocery only)</span>
+        </div>
+        <div class="comp-row">
+          <span>Dine-out / Events</span>
+          <span class="comp-val green">✅ Dineout + Scenes</span>
+          <span class="comp-val amber">Basic restaurant discovery</span>
+          <span class="comp-val neutral">None</span>
+        </div>
+        <div class="comp-row">
+          <span>Food Delivery Profitability</span>
+          <span class="comp-val green">✅ Adj. EBITDA positive FY25</span>
+          <span class="comp-val green">✅ Profitable</span>
+          <span class="comp-val neutral">N/A</span>
+        </div>
+        <div class="comp-row">
+          <span>Membership Program</span>
+          <span class="comp-val green">Swiggy One + One BLCK</span>
+          <span class="comp-val green">Zomato Gold</span>
+          <span class="comp-val amber">Basic</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid-2 mt-24">
+      <div class="card">
+        <h3 class="chart-title">Why Swiggy Can Win 🟢</h3>
+        <div class="reason-list">
+          <div class="reason-item win"><span class="r-num">01</span><div><strong>Multi-Service Ecosystem:</strong> Single app for food, groceries, dining, events. Competitors require multiple apps for the same utility.</div></div>
+          <div class="reason-item win"><span class="r-num">02</span><div><strong>Cross-Selling Synergies:</strong> Food delivery users converted to Instamart. 30%+ of users use multiple services, reducing CAC.</div></div>
+          <div class="reason-item win"><span class="r-num">03</span><div><strong>Profitable Food Engine:</strong> Cash from food delivery funds Q-comm expansion — more sustainable than VC-funded losses alone.</div></div>
+          <div class="reason-item win"><span class="r-num">04</span><div><strong>Bolt Innovation:</strong> Unlocks new use cases in a "mature" category — higher retention and incremental orders.</div></div>
+          <div class="reason-item win"><span class="r-num">05</span><div><strong>718 Food Delivery Cities:</strong> Much wider city footprint than Instamart (124 cities) creates a ready launch pad for Q-comm expansion.</div></div>
+        </div>
+      </div>
+      <div class="card">
+        <h3 class="chart-title">Why Swiggy Can Lose 🔴</h3>
+        <div class="reason-list">
+          <div class="reason-item lose"><span class="r-num">01</span><div><strong>Intense Q-comm Competition:</strong> Blinkit & Zepto both aggressively expanding dark stores — Swiggy's dark store count has been flat vs. competitors.</div></div>
+          <div class="reason-item lose"><span class="r-num">02</span><div><strong>Margin Pressure:</strong> Q-comm is inherently 8–10% margin business. High delivery costs + promotional spend = sustained losses.</div></div>
+          <div class="reason-item lose"><span class="r-num">03</span><div><strong>Execution Risk:</strong> Dark store location strategy, inventory management, delivery quality at scale — any failure compounds losses.</div></div>
+          <div class="reason-item lose"><span class="r-num">04</span><div><strong>Consumer Price Sensitivity:</strong> Indian consumers are price-sensitive. Any fee hike risks shifting users to D-Mart or other alternatives.</div></div>
+          <div class="reason-item lose"><span class="r-num">05</span><div><strong>Regulatory Risk:</strong> Gig worker policy changes could directly impact delivery supply and cost structure.</div></div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ===== RISKS & OPPORTUNITIES ===== -->
+  <section class="tab-panel" id="tab-risks">
+
+    <div class="kpi-header">
+      <h2>Risks, Challenges & Growth Opportunities</h2>
+      <p>A balanced assessment of what could derail Swiggy's thesis and what could accelerate it</p>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <h3 class="chart-title">Risk Heatmap</h3>
+        <div class="chart-wrap"><canvas id="riskRadar"></canvas></div>
+      </div>
+      <div class="card">
+        <h3 class="chart-title">Growth Opportunity Sizing</h3>
+        <p class="chart-sub">Q-comm sector projected: USD 5B (2024) → USD 27–50B (2028) at 53–78% CAGR</p>
+        <div class="chart-wrap"><canvas id="oppBar"></canvas></div>
+      </div>
+    </div>
+
+    <div class="grid-2 mt-24">
+      <div class="card">
+        <h3 class="chart-title">Key Risks — Deep Dive</h3>
+        <div class="risk-cards">
+          <div class="risk-item high">
+            <div class="risk-level">HIGH</div>
+            <div>
+              <strong>Intense Competition</strong>
+              <p>Blinkit, Zepto and Swiggy in cut-throat battle. Companies like Grofers and Big Basket have failed under this competition. Heavy discounts, faster deliveries and category breadth required constantly.</p>
+            </div>
+          </div>
+          <div class="risk-item high">
+            <div class="risk-level">HIGH</div>
+            <div>
+              <strong>Quick Commerce Profitability</strong>
+              <p>Capital-intensive dark store expansion suppresses profitability. High opex for running 1,100+ dark stores nationally — even small unit economics improvements have large P&L impact.</p>
+            </div>
+          </div>
+          <div class="risk-item medium">
+            <div class="risk-level">MED</div>
+            <div>
+              <strong>Regulatory & Gig Worker Policy</strong>
+              <p>Government policies on taxation, gig worker classification or benefits can directly affect delivery cost and supply. Food safety and FSSAI compliance adds complexity.</p>
+            </div>
+          </div>
+          <div class="risk-item medium">
+            <div class="risk-level">MED</div>
+            <div>
+              <strong>Consumer Spending Shift</strong>
+              <p>Price-sensitive Indian consumers may shift to D-Mart or traditional kirana stores if convenience premiums increase. Economic slowdown directly impacts discretionary food delivery spend.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <h3 class="chart-title">Growth Opportunities — Deep Dive</h3>
+        <div class="opp-cards">
+          <div class="opp-item">
+            <div class="opp-num">01</div>
+            <div>
+              <strong>Quick Commerce Expansion</strong>
+              <p>Q-comm sector projected at USD 27–50B by 2028 (53–78% CAGR). Only 124 cities covered vs. 950+ cities with 50K+ population and e-commerce presence. Massive headroom.</p>
+            </div>
+          </div>
+          <div class="opp-item">
+            <div class="opp-num">02</div>
+            <div>
+              <strong>New Product Categories</strong>
+              <p>15–20% of Instamart orders already non-grocery. Electronics, fashion, mobile phones, medicines — formerly dominated by Amazon/Flipkart — are now entering Q-comm TAM.</p>
+            </div>
+          </div>
+          <div class="opp-item">
+            <div class="opp-num">03</div>
+            <div>
+              <strong>Tier 2 & 3 City Penetration</strong>
+              <p>950+ cities with population 50K+ have e-commerce but no Q-comm. Low competition + Swiggy's food delivery brand presence = lower CAC in these markets.</p>
+            </div>
+          </div>
+          <div class="opp-item">
+            <div class="opp-num">04</div>
+            <div>
+              <strong>Platform Advertising Revenue</strong>
+              <p>High-margin, scalable revenue with minimal incremental opex. As restaurant & merchant network grows (240K partners), ad monetisation potential increases significantly.</p>
+            </div>
+          </div>
+          <div class="opp-item">
+            <div class="opp-num">05</div>
+            <div>
+              <strong>Cross-Platform Leveraging</strong>
+              <p>718 food delivery cities vs. 124 Instamart cities — Swiggy can use food delivery's consumer insights and brand trust to launch Instamart in 500+ new cities with lower friction.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ===== VERDICT ===== -->
+  <section class="tab-panel" id="tab-verdict">
+
+    <div class="kpi-header">
+      <h2>Analyst Verdict & Key Takeaways</h2>
+      <p>A structured investment thesis summary — strengths, weaknesses, and the core questions to watch</p>
+    </div>
+
+    <div class="verdict-hero">
+      <div class="verdict-score-area">
+        <div class="verdict-score">
+          <div class="score-label">Analyst Score</div>
+          <div class="score-ring">
+            <canvas id="scoreGauge"></canvas>
+            <div class="score-overlay">
+              <div class="score-num">6.8</div>
+              <div class="score-max">/10</div>
+            </div>
+          </div>
+          <div class="score-tag">MONITORED BUY</div>
+          <div class="score-note">Strong ecosystem thesis; near-term profitability path uncertain due to Q-comm burn</div>
+        </div>
+      </div>
+      <div class="verdict-summary">
+        <h3>Investment Thesis in Brief</h3>
+        <p>Swiggy has successfully <strong>transitioned from a food delivery company to a multi-service urban convenience platform</strong>. The food delivery segment has achieved profitability — validating the core model — and is now funding the higher-growth but loss-making Instamart business.</p>
+        <p class="mt-12">The bear case rests on <strong>Q-comm competitive intensity</strong>: Blinkit holds ~39% market share vs Instamart's 37% and is expanding faster. Zepto at 20% is also gaining rapidly. Swiggy's flat dark store count (relative to competitors) is a concern.</p>
+        <p class="mt-12">The bull case is Swiggy's <strong>integrated ecosystem advantage</strong> — the only platform combining food delivery, quick commerce, dining-out, and events in one app, with meaningful cross-service user engagement (30%+). If Q-comm unit economics improve as dark stores mature, the entire platform can inflect to profitability simultaneously.</p>
+      </div>
+    </div>
+
+    <div class="grid-2 mt-24">
+      <div class="card">
+        <h3 class="chart-title">SWOT Summary</h3>
+        <div class="swot-grid">
+          <div class="swot-item s">
+            <div class="swot-label">STRENGTHS</div>
+            <ul>
+              <li>Strong brand & customer loyalty</li>
+              <li>Integrated multi-service ecosystem (30%+ cross-usage)</li>
+              <li>Food Delivery now Adj. EBITDA positive</li>
+              <li>Bolt — innovation in a mature segment</li>
+              <li>240K+ restaurant partners, 500K+ delivery partners</li>
+              <li>High-margin advertising revenue stream</li>
+            </ul>
+          </div>
+          <div class="swot-item w">
+            <div class="swot-label">WEAKNESSES</div>
+            <ul>
+              <li>Instamart still deeply loss-making</li>
+              <li>Dark store expansion lagging Blinkit & Zepto</li>
+              <li>Heavy capital intensity of Q-comm</li>
+              <li>No significant AOV improvement vs competitors</li>
+              <li>Lower scale in Q-comm vs Blinkit</li>
+            </ul>
+          </div>
+          <div class="swot-item o">
+            <div class="swot-label">OPPORTUNITIES</div>
+            <ul>
+              <li>Q-comm: USD 27–50B market by 2028</li>
+              <li>594+ cities with 50K+ pop. yet to get Q-comm</li>
+              <li>Non-grocery categories (15–20% and growing)</li>
+              <li>Platform advertising (scalable, high-margin)</li>
+              <li>Tier-2/3 city penetration via food delivery base</li>
+            </ul>
+          </div>
+          <div class="swot-item t">
+            <div class="swot-label">THREATS</div>
+            <ul>
+              <li>Blinkit & Zepto aggressive dark store expansion</li>
+              <li>Consumer price sensitivity — D-Mart risk</li>
+              <li>Regulatory risk (gig workers, taxation)</li>
+              <li>Discounting wars compressing already thin margins</li>
+              <li>Amazon/Flipkart entering Q-comm with deeper pockets</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <h3 class="chart-title">Key Questions to Watch</h3>
+        <div class="watch-list">
+          <div class="watch-item">
+            <div class="watch-q">📊 Can Instamart contribution margin reach breakeven by FY27?</div>
+            <div class="watch-a">Watch: Contribution margin per quarter. Currently trending from –32.3% (FY22) → –4.0% (FY25). Needs another 2–3 years at current pace.</div>
+          </div>
+          <div class="watch-item">
+            <div class="watch-q">🏪 Will dark store additions keep up with Blinkit & Zepto?</div>
+            <div class="watch-a">Watch: Active dark store count QoQ. Swiggy at 1,102 stores (Q2FY26) vs. Blinkit's ~1,000+ and Zepto's aggressive expansion. This is the #1 competitive metric.</div>
+          </div>
+          <div class="watch-item">
+            <div class="watch-q">📈 Is MTU growth translating to higher order frequency?</div>
+            <div class="watch-a">Watch: MTU vs. GOV growth differential. If GOV grows faster than MTU, it signals users ordering more (healthy). Current Q2FY26 data shows 18.8% GOV vs 17.2% MTU — positive signal.</div>
+          </div>
+          <div class="watch-item">
+            <div class="watch-q">💰 Is advertising revenue scaling as a % of GOV?</div>
+            <div class="watch-a">Watch: Advertising as % of total revenue. This is Swiggy's highest-margin lever and requires no incremental delivery opex to scale.</div>
+          </div>
+          <div class="watch-item">
+            <div class="watch-q">🏙️ How fast is Tier-2/3 city monetisation materialising?</div>
+            <div class="watch-a">Watch: New city additions for Instamart and MTU contribution from non-metro cities. 1 in 4 FY25 new users already from non-metros — this needs to grow.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card mt-24">
+      <h3 class="chart-title">Financial Trajectory — Path to Profitability</h3>
+      <div class="chart-wrap"><canvas id="profitPath"></canvas></div>
+    </div>
+
+    <div class="footer-note">
+      <p>This dashboard was prepared by <strong>Avishkar Patil</strong> as part of MMS (Finance) research — June 6, 2026. Data sourced from Swiggy's FY25 Annual Report, Q2FY26 Earnings, AllianceBernstein India E-Commerce Research, and Economic Times. This is an educational analysis, not investment advice.</p>
+    </div>
+
+  </section>
+
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>
